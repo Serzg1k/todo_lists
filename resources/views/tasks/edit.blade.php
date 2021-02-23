@@ -35,10 +35,13 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Is done:</strong>
-                    <input type="text" name="is_done" class="form-control" value="{{ $task->is_done }}" >
-                </div>
+                <label for="exampleFormControlSelect1">Is Done:</label>
+                <select class="form-control" name="is_done" id="exampleFormControlSelect1">
+                    <option value="1">Not Done</option>
+                    <option value="2" selected>In Progress</option>
+                    <option value="3">Need Review</option>
+                    <option value="4">Done</option>
+                </select>
             </div>
             <input type="hidden" name="todo_list_id" value="{{ $task->todo_list_id }}">
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

@@ -51,7 +51,7 @@ class TodoTaskController extends Controller
 
         $validatedData = $request->validate([
             'title' => ['required', 'string'],
-            'is_done' => ['required', 'integer'],
+            'is_done' => ['required', 'integer', 'min:1', 'max:4'],
             'todo_list_id' => ['required', 'integer'],
         ]);
         $task = new TodoTask();

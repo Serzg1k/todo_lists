@@ -27,7 +27,23 @@
         @foreach ($tasks as $todo_task)
             <tr>
                 <td>{{ $todo_task->title }}</td>
-                <td>{{ $todo_task->is_done }}</td>
+                <td>
+                    @switch($todo_task->is_done)
+                        @case(1)
+                        Not Done
+                        @break
+
+                        @case(2)
+                        In Progress
+                        @break
+
+                        @case(3)
+                        Need Review
+                        @break
+                        @case(4)
+                        Done
+                        @break
+                    @endswitch</td>
                 <td>
                     <form action="{{ route('todo-task.destroy',$todo_task->id) }}" method="POST">
 
