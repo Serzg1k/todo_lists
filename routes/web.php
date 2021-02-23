@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoListController;
+use App\Http\Controllers\TodoTaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-//Route::resource('/todos', 'TodoController');
+Route::resource('todo-list', TodoListController::class);
+Route::resource('todo-task', TodoTaskController::class);
